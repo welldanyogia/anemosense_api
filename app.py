@@ -67,6 +67,11 @@ def predict():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+# Endpoint untuk mengetes apakah aplikasi berjalan
+@app.route('/test', methods=['GET'])
+def test():
+    return jsonify({"message": "Aplikasi berjalan dengan baik!"}), 200
+
 # Menjalankan aplikasi Flask
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=False)
